@@ -26,8 +26,12 @@ $( document ).ready(function() {
                 // display error message
                 Interface.displayError(validation.message);
             } else {
+
+                // convert user inputs to pennies
+                var pennies = Parser.convertToPennies(input);
+
                 // display results
-                Interface.displayResults(validation.message);
+                Interface.displayResults(pennies);
             }
         }
     });
