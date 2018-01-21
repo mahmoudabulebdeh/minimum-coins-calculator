@@ -30,6 +30,9 @@ $( document ).ready(function() {
                 // convert user inputs to pennies
                 var pennies = Parser.convertToPennies(input);
 
+                // calculate the number of Sterling coins in the given input value
+                var coins = Calculator.numberOfCoins(pennies);
+
                 // display results
                 Interface.displayResults(pennies);
             }
