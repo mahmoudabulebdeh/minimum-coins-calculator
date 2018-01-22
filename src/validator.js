@@ -23,21 +23,21 @@ var Validator = {
         var input = $.trim(str);
 
         if(input === ''){
-            validation.message = 'No input found! Please enter valid sterling amount and press enter!';
+            validation.message = 'No input found!';
         } else if(this.containWhiteSpaceCharacter(input)){
-            validation.message = 'Unexpected space character was found! Please enter valid sterling amount and press enter!';
+            validation.message = 'Unexpected space character was found!';
         } else if(this.containsUnExpectedValue(input)){
-            validation.message = 'Unexpected character was found! Please enter a valid sterling amount and press enter!';
+            validation.message = 'Invalid character was entered!';
         } else if(this.containsNonNumeric(input)){
-            validation.message = 'No numeric value found! Please enter a valid sterling amount and press enter!';
+            validation.message = 'No numeric value found!';
         } else if(this.containsPoundSignInWrongPosition(input)){
-            validation.message = 'Pound Sign in wrong position! Please enter a valid sterling amount and press enter!';
+            validation.message = 'Pound Sign in wrong position!';
         } else if(this.containsPennySignInWrongPosition(input)){
-            validation.message = 'Penny Sign in wrong position! Please enter a valid sterling amount and press enter!';
+            validation.message = 'Penny Sign in wrong position!';
         } else if(this.containsDecimalPointInWrongPosition(input)){
-            validation.message = 'Decimal point found in wrong Position! Please enter a valid sterling amount and press enter!';
+            validation.message = 'Decimal point found in wrong Position!';
         } else if(this.containsMoreThanOneDecimalPoint(input)){
-            validation.message = 'More than one decimal point was found! Please enter a valid sterling amount and press enter!';
+            validation.message = 'More than one decimal point was found!';
         } else {
             validation.result = true;
             validation.message = "valid input!"

@@ -26,15 +26,17 @@ $( document ).ready(function() {
                 // display error message
                 Interface.displayError(validation.message);
             } else {
-
                 // convert user inputs to pennies
                 var pennies = Parser.convertToPennies(input);
 
                 // calculate the number of Sterling coins in the given input value
-                var coins = Calculator.numberOfCoins(pennies);
+                var coins= Calculator.numberOfCoins(pennies);
+
+                // prepare results for output
+                var results = Interface.prepareResults(input, coins);
 
                 // display results
-                Interface.displayResults(pennies);
+                Interface.displayResults(results);
             }
         }
     });
