@@ -22,7 +22,7 @@ var Validator = {
         //  removes all newlines, spaces and tabs from the beginning and end of the supplied string
         var input = $.trim(str);
 
-        if(input === ''){
+        if(input.length===0){
             validation.message = 'No input found!';
         } else if(this.containWhiteSpaceCharacter(input)){
             validation.message = 'Unexpected space character was found!';
@@ -38,6 +38,8 @@ var Validator = {
             validation.message = 'Decimal point found in wrong Position!';
         } else if(this.containsMoreThanOneDecimalPoint(input)){
             validation.message = 'More than one decimal point was found!';
+        } else if(Parser.removeSymbols(input) == 0){
+            validation.message = 'Input value is less than 1p!';
         } else {
             validation.result = true;
             validation.message = "valid input!"

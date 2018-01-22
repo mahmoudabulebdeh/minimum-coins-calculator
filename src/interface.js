@@ -38,8 +38,6 @@ var Interface = {
         }
         results = input + ' = ' + results.substr(0,results.length-1);
 
-        console.log(results);
-
         return results;
     },
 

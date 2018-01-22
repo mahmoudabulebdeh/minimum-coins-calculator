@@ -1,6 +1,7 @@
 /**
  * Created by Mahmoud on 21/01/2018.
  */
+
 /**
  * Object holding functionality to calculate the minimum number of Sterling coins needed to make up a given number of pennies.
  */
@@ -17,7 +18,7 @@ var Calculator = {
      * @param {Integer} pennies, the number of pennies provided as input from the user
      * @returns {Object} results, an object containing the coins and quantities of each of them.
      */
-    numberOfCoins: function(pennies) {
+    coinChangeMaker: function(pennies) {
 
         // sort the coins array in descending order:
         this.sterlingCoins.sort(function(a, b){return b-a});
@@ -44,7 +45,7 @@ var Calculator = {
                 results[coin] = this.coinCounter(pennies,coin);
 
                 // update the value of the remaining pennies
-                pennies = this.remaining(pennies,coin);
+                pennies = this.remainingValue(pennies,coin);
             }
         }
         return results;
@@ -66,7 +67,7 @@ var Calculator = {
      * @param {Integer} coin, the value of coin under study
      * @returns {Integer} representing the number of remaining pennies.
      */
-    remaining: function(pennies, coin) {
+    remainingValue: function(pennies, coin) {
         return pennies % coin;
     }
 };
